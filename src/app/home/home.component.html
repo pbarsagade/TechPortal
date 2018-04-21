@@ -1,18 +1,16 @@
-<div fxLayout="column" fxLayoutAlign="space-around strech"  fxLayoutGap="5px">
+<div fxLayout="column" fxLayoutAlign="space-around strech" style="margin:10 !important;">
   <div>
     <app-header></app-header>
   </div>
   <div fxLayout="row" fxLayoutAlign="space-around strech">
-    <div fxFlex="20" style="background-color: yellow">
-      <app-dashboard>
-      </app-dashboard>
+    <div fxFlex="20">
+        <app-left-board></app-left-board>
     </div>
-    <div fxFlex="60" style="background-color:hotpink">
+    <div fxFlex="60" fxLayoutAlign="space-around center">
       <app-question></app-question>
     </div>
-    <div fxFlex="20" style="background-color: yellow">
-      <app-dashboard>
-      </app-dashboard>
+    <div fxFlex="20" fxLayoutAlign="space-around center">
+        <app-right-board></app-right-board>
     </div>
   </div>
 </div>
