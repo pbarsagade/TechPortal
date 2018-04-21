@@ -1,19 +1,15 @@
 <div fxLayout="column" fxLayoutGap="20px">
     <button mat-raised-button color="primary">Post Question</button>
-    <marquee behavior="scroll" direction="up" scrollamount="2">
+    <marquee behavior="scroll" direction="up" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
         <mat-list>
-            <h3 mat-subheader>Folders</h3>
-            <mat-list-item *ngFor="let folder of folders">
-                <mat-icon mat-list-icon>folder</mat-icon>
-                <h4 mat-line>{{folder.name}}</h4>
-                <p mat-line> {{folder.updated | date}} </p>
-            </mat-list-item>
+            <h3 mat-subheader>Experts</h3>
             <mat-divider></mat-divider>
-            <h3 mat-subheader>Notes</h3>
-            <mat-list-item *ngFor="let note of notes">
-                <mat-icon mat-list-icon>note</mat-icon>
-                <h4 mat-line>{{note.name}}</h4>
-                <p mat-line> {{note.updated | date}} </p>
+            <mat-list-item *ngFor="let expert of experts">
+                <mat-icon mat-list-icon>person</mat-icon>
+                <h4 mat-line>{{expert.User.UserName}}</h4>
+                <div mat-line *ngFor="let category of expert.Category">
+                    {{ category.Name }},
+                </div>
             </mat-list-item>
         </mat-list>
     </marquee>
