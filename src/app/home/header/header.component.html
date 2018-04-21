@@ -1,11 +1,31 @@
 <div fxLayout="row" fxLayoutAlign="space-around strech">
-    <div fxFlex="20" style="background-color:lightseagreen ">
-    logo
+  <div fxFlex="20" fxLayoutAlign="space-around center">
+    <img src="../../../assets/images/TECHPORTAL.png" alt="techPortalLogo" width="100px" height="60px">
+  </div>
+  <div fxFlex="60" fxLayoutAlign="space-around center">
+    <app-search></app-search>
+  </div>
+  <div fxFlex="20" fxLayoutAlign="space-around center">
+    <div fxFlex="50" fxLayoutAlign="space-around center">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>account_box</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>comment</mat-icon>
+          <span>Feedback</span>
+        </button>
+      </mat-menu>
     </div>
-    <div fxFlex="60" style="background-color:maroon">
-        <app-search></app-search>
-    </div>
-    <div fxFlex="20" style="background-color:lightgreen">
-      profile
+    <div fxFlex="50" fxLayoutAlign="space-around center">
+      <button mat-icon-button>
+        <mat-icon title="Home Page">home</mat-icon>
+      </button>
+
     </div>
   </div>
+</div>
