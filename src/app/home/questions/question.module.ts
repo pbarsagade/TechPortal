@@ -13,7 +13,7 @@ import { QuestionComponent } from './question.component';
     CommonModule,
     FlexLayoutModule
   ],
-  exports:[
+  exports: [
     QuestionComponent
   ],
   declarations: [
