@@ -6,7 +6,7 @@
     <app-search></app-search>
   </div>
   <div fxFlex="20" fxLayoutAlign="space-around center">
-    <div fxFlex="50" fxLayoutAlign="space-around center">
+    <div fxFlex="50" fxLayoutAlign="end center">
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
       </button>
@@ -15,6 +15,10 @@
           <mat-icon>account_box</mat-icon>
           <span>Profile</span>
         </button>
+        <button mat-menu-item disabled>
+            <mat-icon>perm_identity</mat-icon>
+            <span>Admin</span>
+          </button>
         <button mat-menu-item>
           <mat-icon>comment</mat-icon>
           <span>Feedback</span>
