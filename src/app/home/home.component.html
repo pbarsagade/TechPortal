@@ -1,6 +1,18 @@
-<app-header></app-header>
-<app-dashboard></app-dashboard>
-<app-question></app-question>
-<p>
-  home works!
-</p>
+<div fxLayout="column" fxLayoutAlign="space-around strech">
+  <div style="background-color: red">
+    <app-header></app-header>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-around strech">
+    <div fxFlex="20" style="background-color: yellow">
+      <app-dashboard>
+      </app-dashboard>
+    </div>
+    <div fxFlex="60" style="background-color:hotpink">
+      <app-question></app-question>
+    </div>
+    <div fxFlex="20" style="background-color: yellow">
+      <app-dashboard>
+      </app-dashboard>
+    </div>
+  </div>
+</div>
