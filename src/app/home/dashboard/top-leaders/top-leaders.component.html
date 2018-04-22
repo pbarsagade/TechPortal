@@ -1,0 +1,13 @@
+<mat-list>
+  <h3 mat-subheader>Leaders</h3>
+  <mat-divider></mat-divider>
+  <mat-list-item *ngFor="let lead of leaders">
+    <div fxFlex="15">
+      <mat-icon mat-list-icon>person</mat-icon>
+    </div>
+    <div fxFlex="80">
+      <h4 mat-line>{{lead.UserName}}</h4>
+    </div>
+    <div fxFlex="5" class="badge1" attr.data-badge="{{lead.TotalPoints}}"></div>
+  </mat-list-item>
+</mat-list>

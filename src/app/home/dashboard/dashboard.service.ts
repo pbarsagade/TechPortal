@@ -11,14 +11,17 @@ import { TechExpert } from '../../model/techExpert';
 export class DashboardService {
 
   private experts: BehaviorSubject<TechExpert[]>;
+  private leaders: BehaviorSubject<User[]>;
 
   private dataStore: {
     experts: TechExpert[];
+    leaders: User[];
   };
 
   constructor(private http: HttpClient) {
-    this.dataStore = { experts: [] };
+    this.dataStore = { experts: [], leaders: [] };
     this.experts = new BehaviorSubject<TechExpert[]>([]);
+    this.leaders = new BehaviorSubject<User[]>([]);
   }
 
   get expertList(): Observable<TechExpert[]> {
@@ -35,6 +38,23 @@ export class DashboardService {
       },
         error => {
           console.log('Failed to fetch users');
+        });
+  }
+
+  get leaderList(): Observable<User[]> {
+    return this.leaders.asObservable();
+  }
+
+  loadAllLeaders() {
+    const dataUrl = '../../../assets/data/topLeaders.json';
+
+    return this.http.get<User[]>(dataUrl)
+      .subscribe(res => {
+        this.dataStore.leaders = res;
+        this.leaders.next(Object.assign({}, this.dataStore).leaders);
+      },
+        error => {
+          console.log('Failed to fetch leaders');
         });
   }
 }

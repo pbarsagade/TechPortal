@@ -7,6 +7,7 @@ import { MaterialModule } from '../../shared/material.module';
 
 import { LeftBoardComponent } from './left-board/left-board.component';
 import { RightBoardComponent } from './right-board/right-board.component';
+import { TopLeadersComponent } from './top-leaders/top-leaders.component';
 
 import { DashboardService } from './dashboard.service';
 
@@ -17,8 +18,15 @@ import { DashboardService } from './dashboard.service';
     FlexLayoutModule,
     MaterialModule
   ],
-  exports: [LeftBoardComponent, RightBoardComponent],
-  declarations: [LeftBoardComponent, RightBoardComponent],
+  exports: [
+    LeftBoardComponent,
+    RightBoardComponent
+  ],
+  declarations: [
+    LeftBoardComponent,
+    RightBoardComponent,
+    TopLeadersComponent
+  ],
   providers: [DashboardService]
 })
 export class DashboardModule { }
