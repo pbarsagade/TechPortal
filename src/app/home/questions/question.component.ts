@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-question',
   template: `
-    <p>
-      question works!
-    </p>
+  <app-question-list>Loading...</app-question-list>
   `,
   styles: []
 })
