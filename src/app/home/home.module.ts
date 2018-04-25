@@ -6,12 +6,16 @@ import { QuestionModule } from './questions/question.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeComponent } from './home.component';
 
+import {HomeRoutingModule} from './home-routing.module';
+// import { HeaderComponent } from './header/header.component';
+
 @NgModule({
   imports: [
     CommonModule,
     HeaderModule,
     DashboardModule,
-    QuestionModule
+    QuestionModule,
+    HomeRoutingModule
   ],
   exports: [
     HomeComponent

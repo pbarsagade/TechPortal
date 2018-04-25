@@ -1,9 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+
 import { HomeModule } from './home/home.module';
+// import { HomeComponent } from './home/home.component';
+
+// const appRouts: Routes = [
+//   { path: 'home', loadChildren: './home/home.module#HomeModule' },
+//   { path: '', redirectTo: 'home', pathMatch: 'full' }
+// ];
 
 @NgModule({
   declarations: [
@@ -13,6 +21,7 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     BrowserAnimationsModule,
     HomeModule
+    // RouterModule.forRoot(appRouts)
   ],
   providers: [],
   bootstrap: [AppComponent]

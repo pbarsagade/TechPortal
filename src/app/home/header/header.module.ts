@@ -18,8 +18,8 @@ import { MatInput } from '@angular/material';
     FlexLayoutModule
   ],
   declarations: [
-    HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    HeaderComponent
   ]
 })
 export class HeaderModule { }
