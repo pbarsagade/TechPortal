@@ -11,9 +11,10 @@ import { TopLeadersComponent } from './top-leaders/top-leaders.component';
 
 import { DashboardService } from './dashboard.service';
 import { Routes, RouterModule } from '@angular/router';
+import { QuestionDetailComponent } from '../questions/question-detail/question-detail.component';
 
 const leftNavRoutes: Routes = [
-  { path: 'demo1', component: RightBoardComponent }
+  { path: 'detail', component:  QuestionDetailComponent  }
 ];
 
 @NgModule({
@@ -21,8 +22,8 @@ const leftNavRoutes: Routes = [
     CommonModule,
     HttpClientModule,
     FlexLayoutModule,
-    MaterialModule
-    // RouterModule.forChild(leftNavRoutes)
+    MaterialModule,
+    RouterModule.forChild(leftNavRoutes)
   ],
   exports: [
     LeftBoardComponent,
