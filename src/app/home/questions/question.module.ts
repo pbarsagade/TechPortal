@@ -10,12 +10,19 @@ import { PostAnswerComponent } from './post-answer/post-answer.component';
 import { QuestionComponent } from './question.component';
 
 import { QuestionService } from './question.service';
+import { Routes, RouterModule } from '@angular/router';
+
+const queRoutes: Routes = [
+  { path: '', component: QuestionListComponent },
+  { path: 'detail', component: QuestionDetailComponent }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forChild(queRoutes)
   ],
   exports: [
     QuestionComponent

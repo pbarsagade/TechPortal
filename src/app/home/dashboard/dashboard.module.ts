@@ -10,6 +10,11 @@ import { RightBoardComponent } from './right-board/right-board.component';
 import { TopLeadersComponent } from './top-leaders/top-leaders.component';
 
 import { DashboardService } from './dashboard.service';
+import { Routes, RouterModule } from '@angular/router';
+
+const leftNavRoutes: Routes = [
+  { path: 'demo1', component: RightBoardComponent }
+];
 
 @NgModule({
   imports: [
@@ -17,6 +22,7 @@ import { DashboardService } from './dashboard.service';
     HttpClientModule,
     FlexLayoutModule,
     MaterialModule
+    // RouterModule.forChild(leftNavRoutes)
   ],
   exports: [
     LeftBoardComponent,

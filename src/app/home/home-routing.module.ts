@@ -2,17 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { DemoComponent } from './demo.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 const homeRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    children: [
-      {
-        path: 'question',
-        loadChildren: './questions/question.module#QuestionModule'
-      }
-    ]
+    loadChildren: './questions/question.module#QuestionModule'
   }
 ];
 

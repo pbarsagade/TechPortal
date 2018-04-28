@@ -5,15 +5,16 @@ import { HeaderModule } from './header/header.module';
 import { QuestionModule } from './questions/question.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeComponent } from './home.component';
-
+import { Routes, RouterModule } from '@angular/router';
 import {HomeRoutingModule} from './home-routing.module';
-// import { HeaderComponent } from './header/header.component';
+import { DemoComponent } from './demo.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HeaderModule,
     DashboardModule,
+    RouterModule,
     QuestionModule,
     HomeRoutingModule
   ],
@@ -21,7 +22,8 @@ import {HomeRoutingModule} from './home-routing.module';
     HomeComponent
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    DemoComponent
   ]
 })
 export class HomeModule { }
