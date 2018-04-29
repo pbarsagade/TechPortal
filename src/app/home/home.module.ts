@@ -7,7 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeRoutingModule} from './home-routing.module';
-import { DemoComponent } from './demo.component';
+import { ProfileModuleModule } from './profile/profile-module.module';
 
 @NgModule({
   imports: [
@@ -16,14 +16,14 @@ import { DemoComponent } from './demo.component';
     DashboardModule,
     RouterModule,
     QuestionModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ProfileModuleModule
   ],
   exports: [
     HomeComponent
   ],
   declarations: [
-    HomeComponent,
-    DemoComponent
+    HomeComponent
   ]
 })
 export class HomeModule { }

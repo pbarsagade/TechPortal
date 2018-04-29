@@ -10,14 +10,14 @@ import { TechExpert } from './techExpert';
     CommonModule
   ],
   exports: [
-    Category,
-    User,
-    TechExpert
+    // Category,
+    // User,
+    // TechExpert
   ],
   declarations: [
-    Category,
-    User,
-    TechExpert
+    // Category,
+    // User,
+    // TechExpert
   ]
 })
 export class ModelsModule {
