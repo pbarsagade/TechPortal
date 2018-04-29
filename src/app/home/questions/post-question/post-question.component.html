@@ -1,3 +1,26 @@
-<p>
-  post-question works!
-</p>
+<div fxFlex>
+  <mat-card fxFlexAlign="center">
+    <div fxLayout="column" fxLayoutAlign="space-around strech">
+      <mat-form-field>
+        <input matInput placeholder="Title*">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Description*"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Technology*">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutGap="20px">
+        <div  fxFlex="50" fxLayoutAlign="start center">
+          <button mat-button color="primary">Cancel</button>
+        </div>
+        <div  fxFlex="50" fxLayoutAlign="end center" fxLayoutGap="20px">
+          <button mat-raised-button color="accent">Preview</button>
+          <button mat-raised-button color="primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

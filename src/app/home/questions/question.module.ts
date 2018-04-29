@@ -13,8 +13,7 @@ import { QuestionService } from './question.service';
 import { Routes, RouterModule } from '@angular/router';
 
 const queRoutes: Routes = [
-  { path: '', component: QuestionListComponent },
-  { path: 'detail', component: QuestionDetailComponent }
+  { path: '', component: QuestionListComponent }
 ];
 
 @NgModule({

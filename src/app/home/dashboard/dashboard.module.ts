@@ -11,10 +11,10 @@ import { TopLeadersComponent } from './top-leaders/top-leaders.component';
 
 import { DashboardService } from './dashboard.service';
 import { Routes, RouterModule } from '@angular/router';
-import { QuestionDetailComponent } from '../questions/question-detail/question-detail.component';
+import { PostQuestionComponent } from '../questions/post-question/post-question.component';
 
 const leftNavRoutes: Routes = [
-  { path: 'detail', component:  QuestionDetailComponent  }
+  { path: 'postQuery', component:  PostQuestionComponent  }
 ];
 
 @NgModule({

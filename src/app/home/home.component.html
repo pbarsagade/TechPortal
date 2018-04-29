@@ -4,14 +4,15 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="space-around strech">
     <div fxFlex="20">
-        <app-left-board></app-left-board>
+      <app-left-board></app-left-board>
     </div>
-    <div fxFlex="60" fxLayoutAlign="start start">
-      <!-- <app-question></app-question> -->
-      <router-outlet></router-outlet>
+    <div fxFlex="60" fxLayoutAlign="start strech">
+      <div fxFlex>
+        <router-outlet></router-outlet>
+      </div>
     </div>
     <div fxFlex="20" fxLayoutAlign="space-around strech">
-        <app-right-board></app-right-board>
+      <app-right-board></app-right-board>
     </div>
   </div>
 </div>
