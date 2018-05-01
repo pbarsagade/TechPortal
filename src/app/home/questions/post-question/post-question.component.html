@@ -1,26 +1,44 @@
-<div fxFlex>
-  <mat-card fxFlexAlign="center">
-    <div fxLayout="column" fxLayoutAlign="space-around strech">
-      <mat-form-field>
-        <input matInput placeholder="Title*">
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput placeholder="Description*"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Technology*">
-          <mat-option value="option">Option</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <div fxLayout="row" fxLayoutGap="20px">
-        <div  fxFlex="50" fxLayoutAlign="start center">
-          <button mat-button color="primary">Cancel</button>
+<form #frmQue="ngForm" (ngSubmit)="onSubmit(frmQue);">
+  <div fxFlex>
+    <mat-card class="pq-card" fxLayout="column" fxLayoutGap="20px">
+      <mat-card-header [ngClass]="{'card-title':true}" fxLayoutAlign="center center">
+        <mat-card-title>Post Question</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
+          <mat-form-field>
+            <input [(ngModel)]="title" name="title" required matInput placeholder="Title">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea [(ngModel)]="desc" name="desc" required rows="10" matInput placeholder="Description"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select [(ngModel)]="category" name="category" required placeholder="Technology">
+              <mat-option value="Java">Java</mat-option>
+              <mat-option value=".Net">.Net</mat-option>
+              <mat-option value="Script">Script</mat-option>
+              <mat-option value="SQL">SQL</mat-option>
+              <mat-option value="Mobile">Mobile</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-        <div  fxFlex="50" fxLayoutAlign="end center" fxLayoutGap="20px">
-          <button mat-raised-button color="accent">Preview</button>
-          <button mat-raised-button color="primary">Submit</button>
+        <div *ngIf="!isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
+          <p>Form value: {{ question.title }}</p>
+          <p>Form title: {{ title }} {{desc}} {{category}}</p>
         </div>
-      </div>
-    </div>
-  </mat-card>
-</div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div fxFlex="50" fxLayoutAlign="start center">
+            <button routerLink="/" mat-button color="primary">Cancel</button>
+          </div>
+          <div fxFlex="50" fxLayoutAlign="end center" fxLayoutGap="20px">
+            <button mat-raised-button color="accent" [disabled]="!frmQue.form.valid" (click)="onPreview(frmQue);">{{prevBtnLbl}}</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]="!frmQue.form.valid">Submit</button>
+          </div>
+        </div>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+</form>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../shared/material.module';
 
 import { QuestionListComponent } from './question-list/question-list.component';
@@ -11,6 +12,7 @@ import { QuestionComponent } from './question.component';
 
 import { QuestionService } from './question.service';
 import { Routes, RouterModule } from '@angular/router';
+import { ModelsModule } from '../../model/models.module';
 
 const queRoutes: Routes = [
   { path: '', component: QuestionListComponent }
@@ -19,8 +21,10 @@ const queRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
     MaterialModule,
+    ModelsModule,
     RouterModule.forChild(queRoutes)
   ],
   exports: [

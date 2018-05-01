@@ -1,5 +1,8 @@
+import { Category } from './category';
+
 export class Question {
     id: number;
-    name: string;
-    email: string;
+    title: string;
+    description: string;
+    category: Category;
 }

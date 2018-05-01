@@ -1,0 +1,21 @@
+.pq-card {
+    margin-right: 20px;
+    margin-top: 0px;
+  }
+  .card-title{
+      background-color:midnightblue;
+      color: white;
+      font-weight: bold;
+     text-align: center;
+     flex: 1 1 auto;
+  }
+  .show-div{
+    visibility: visible;
+    display:inline;
+  }
+
+  .hide-div{
+    visibility: hidden;
+    display:none;
+  }
+  
