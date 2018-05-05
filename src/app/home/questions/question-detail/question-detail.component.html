@@ -1,11 +1,11 @@
-<mat-card class="example-card">
+<mat-card>
   <mat-card-header>
     <mat-card-title>{{queDetails.Question.Title}}</mat-card-title>
     <mat-card-subtitle>{{queDetails.Question.DateCreated| date}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
     <button type="button" routerLink="/" mat-button color="primary">Back</button>
-    <button mat-button>Answer</button>
+    <button mat-button (click)="openDialog()">Answer</button>
   </mat-card-actions>
   <mat-card-content>
     <p>

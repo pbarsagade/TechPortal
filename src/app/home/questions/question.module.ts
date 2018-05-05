@@ -48,6 +48,9 @@ const queRoutes: Routes = [
     QuestionService,
     CategoryService,
     QuestionGuard,
+  ],
+  entryComponents: [
+    PostAnswerComponent
   ]
 })
 export class QuestionModule { }

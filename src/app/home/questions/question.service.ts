@@ -53,5 +53,4 @@ export class QuestionService {
           console.log('Failed to fetch questions');
         });
   }
-
 }
