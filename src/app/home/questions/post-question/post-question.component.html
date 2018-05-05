@@ -7,18 +7,16 @@
       <mat-card-content>
         <div *ngIf="isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
           <mat-form-field>
-            <input [(ngModel)]="title" name="title" required matInput placeholder="Title">
+            <input [(ngModel)]="question.Title" name="title" required matInput placeholder="Title">
           </mat-form-field>
           <mat-form-field>
-            <textarea [(ngModel)]="desc" name="desc" required rows="10" matInput placeholder="Description"></textarea>
+            <textarea [(ngModel)]="question.Description" name="desc" required rows="10" matInput placeholder="Description"></textarea>
           </mat-form-field>
           <mat-form-field>
-            <mat-select [(ngModel)]="category" name="category" required placeholder="Technology">
-              <mat-option value="Java">Java</mat-option>
-              <mat-option value=".Net">.Net</mat-option>
-              <mat-option value="Script">Script</mat-option>
-              <mat-option value="SQL">SQL</mat-option>
-              <mat-option value="Mobile">Mobile</mat-option>
+            <mat-select [(ngModel)]="question.Category.Id" name="category" required placeholder="Technology">
+                <mat-option *ngFor="let cat of categories" [value]="cat.Id">
+                    {{ cat.Name }}
+                  </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -30,10 +28,10 @@
       <mat-card-actions>
         <div fxLayout="row" fxLayoutGap="20px">
           <div fxFlex="50" fxLayoutAlign="start center">
-            <button routerLink="/" mat-button color="primary">Cancel</button>
+            <button type="button" routerLink="/" mat-button color="primary">Cancel</button>
           </div>
           <div fxFlex="50" fxLayoutAlign="end center" fxLayoutGap="20px">
-            <button mat-raised-button color="accent" [disabled]="!frmQue.form.valid" (click)="onPreview(frmQue);">{{prevBtnLbl}}</button>
+            <button type="button" mat-raised-button color="accent" [disabled]="!frmQue.form.valid" (click)="onPreview(frmQue);">{{prevBtnLbl}}</button>
             <button type="submit" mat-raised-button color="primary" [disabled]="!frmQue.form.valid">Submit</button>
           </div>
         </div>

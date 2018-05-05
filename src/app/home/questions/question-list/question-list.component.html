@@ -1,7 +1,8 @@
 <div fxFlex>
   <mat-list>
-    <mat-list-item *ngFor="let que of questions">
+    <mat-list-item *ngFor="let que of queAnsList | orderBy: 'DateCreated':true">
       {{que.Question.Title}}
+      {{que.Question.DateCreated | date:"MM/dd/yy"}}
     </mat-list-item>
   </mat-list>
 </div>

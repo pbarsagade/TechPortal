@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { OrderModule } from 'ngx-order-pipe';
+
 import { MaterialModule } from '../../shared/material.module';
+import { ModelsModule } from '../../model/models.module';
 
 import { QuestionListComponent } from './question-list/question-list.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
@@ -11,8 +15,8 @@ import { PostAnswerComponent } from './post-answer/post-answer.component';
 import { QuestionComponent } from './question.component';
 
 import { QuestionService } from './question.service';
-import { Routes, RouterModule } from '@angular/router';
-import { ModelsModule } from '../../model/models.module';
+import { CategoryService } from './category.service';
+
 
 const queRoutes: Routes = [
   { path: '', component: QuestionListComponent }
@@ -25,6 +29,7 @@ const queRoutes: Routes = [
     FlexLayoutModule,
     MaterialModule,
     ModelsModule,
+    OrderModule,
     RouterModule.forChild(queRoutes)
   ],
   exports: [
@@ -37,6 +42,9 @@ const queRoutes: Routes = [
     PostAnswerComponent,
     QuestionComponent,
   ],
-  providers: [QuestionService]
+  providers: [
+    QuestionService,
+    CategoryService
+  ]
 })
 export class QuestionModule { }

@@ -11,13 +11,14 @@ import { Question } from './question';
     CommonModule
   ],
   exports: [
-    Category,
-    Question
+    // Category,
+    // Question
     // User,
     // TechExpert
   ],
   declarations: [
     // Category,
+    // Question
     // User,
     // TechExpert
   ]
