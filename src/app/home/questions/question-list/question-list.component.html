@@ -1,7 +1,8 @@
 <div fxFlex>
   <mat-list>
     <mat-list-item *ngFor="let que of queAnsList | orderBy: 'DateCreated':true">
-      {{que.Question.Title}}
+     <a href=""></a> 
+     <a [routerLink]="['/question/detail',que.Question.Id]">{{que.Question.Title}}</a>
       {{que.Question.DateCreated | date:"MM/dd/yy"}}
     </mat-list-item>
   </mat-list>

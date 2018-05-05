@@ -16,10 +16,12 @@ import { QuestionComponent } from './question.component';
 
 import { QuestionService } from './question.service';
 import { CategoryService } from './category.service';
+import { QuestionGuard } from './question-guard.guard';
 
 
 const queRoutes: Routes = [
-  { path: '', component: QuestionListComponent }
+  { path: '', component: QuestionListComponent },
+  { path: 'question/detail/:id', canActivate: [QuestionGuard], component: QuestionDetailComponent }
 ];
 
 @NgModule({
@@ -44,7 +46,8 @@ const queRoutes: Routes = [
   ],
   providers: [
     QuestionService,
-    CategoryService
+    CategoryService,
+    QuestionGuard,
   ]
 })
 export class QuestionModule { }

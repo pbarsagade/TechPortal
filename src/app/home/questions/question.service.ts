@@ -26,6 +26,10 @@ export class QuestionService {
     return this.questions.asObservable();
   }
 
+  getQuestion(id: number): QuestionAnswer {
+    return this.dataStore.questionList.find(q => q.Question.Id === id);
+  }
+
   newquestion(ques: Question): number {
     ques.Id = 5;
     const qa = new QuestionAnswer();
