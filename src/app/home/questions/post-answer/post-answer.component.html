@@ -1,7 +1,13 @@
 <h2 mat-dialog-title>{{quesAns.Question.Title}}</h2>
-<mat-dialog-content>Are you sure?</mat-dialog-content>
+<mat-dialog-content>
+  <div *ngIf="quesAns.Answers.length > 0; else noAnsBlock">
+    {{quesAns.Answers[0].Description}}
+    {{quesAns.Answers[0].User.UserName}}
+  </div>
+</mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button mat-dialog-close>No</button>
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
   <button mat-button (click)="save()">Yes</button>
 </mat-dialog-actions>
+<ng-template #noAnsBlock>No Answers available</ng-template>

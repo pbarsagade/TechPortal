@@ -22,5 +22,4 @@ export class PostAnswerComponent implements OnInit {
   save() {
     this.dialogRef.close(this.quesAns);
   }
-
 }
