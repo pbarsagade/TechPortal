@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Answer } from '../../../model/answer';
 import { Title } from '@angular/platform-browser';
+import { QuestionAnswer } from '../../../model/questionAnswer';
 
 @Component({
   selector: 'app-post-answer',
@@ -10,16 +11,16 @@ import { Title } from '@angular/platform-browser';
 })
 export class PostAnswerComponent implements OnInit {
 
-  answer: Answer;
-  constructor(public dialog: MatDialog, private dialogRef: MatDialogRef<PostAnswerComponent>) { }
+  quesAns: QuestionAnswer;
+  constructor(public dialog: MatDialog, private dialogRef: MatDialogRef<PostAnswerComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-    this.answer = new Answer();
-    this.answer.Title = 'Test Answer';
+    this.quesAns = this.data.queAns;
   }
 
   save() {
-    this.dialogRef.close(this.answer);
+    this.dialogRef.close(this.quesAns);
   }
 
 }

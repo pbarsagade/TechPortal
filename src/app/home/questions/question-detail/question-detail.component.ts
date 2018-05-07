@@ -28,7 +28,8 @@ export class QuestionDetailComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(PostAnswerComponent, {
       width: '600px', height: '450px',
-      data: { answer: this.answer }
+      disableClose: true,
+      data: { queAns: this.queDetails }
     });
 
     dialogRef.afterClosed().subscribe(result => {
