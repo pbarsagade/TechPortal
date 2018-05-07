@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderPipe } from 'ngx-order-pipe';
 
-import { QuestionService } from '../question.service';
+import { QuestionService } from '../services/question.service';
 import { Question } from '../../../model/question';
 import { QuestionAnswer } from '../../../model/questionAnswer';
 

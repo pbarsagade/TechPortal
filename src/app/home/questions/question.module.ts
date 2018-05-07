@@ -14,8 +14,9 @@ import { PostQuestionComponent } from './post-question/post-question.component';
 import { PostAnswerComponent } from './post-answer/post-answer.component';
 import { QuestionComponent } from './question.component';
 
-import { QuestionService } from './question.service';
-import { CategoryService } from './category.service';
+import { QuestionService } from './services/question.service';
+import { CategoryService } from './services/category.service';
+import { AnswerService } from './services/answer.service';
 import { QuestionGuard } from './question-guard.guard';
 
 
@@ -47,6 +48,7 @@ const queRoutes: Routes = [
   providers: [
     QuestionService,
     CategoryService,
+    AnswerService,
     QuestionGuard,
   ],
   entryComponents: [

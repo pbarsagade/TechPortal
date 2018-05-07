@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { QuestionService } from '../question.service';
+import { QuestionService } from '../services/question.service';
 import { QuestionAnswer } from '../../../model/questionAnswer';
 import { PostAnswerComponent } from '../post-answer/post-answer.component';
 import { MatDialog } from '@angular/material';

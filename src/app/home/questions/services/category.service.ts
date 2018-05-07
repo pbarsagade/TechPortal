@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClient } from '@angular/common/http';
 
-import { Category } from '../../model/category';
+import { Category } from '../../../model/category';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Question } from '../../../model/question';
-import { QuestionService } from '../question.service';
-import { CategoryService } from '../category.service';
+import { QuestionService } from '../services/question.service';
+import { CategoryService } from '../services/category.service';
 import { Category } from '../../../model/category';
 import { Router } from '@angular/router';
 

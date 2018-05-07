@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 
-import { Question } from '../../model/question';
-import { Category } from '../../model/category';
-import { QuestionAnswer } from '../../model/questionAnswer';
+import { Question } from '../../../model/question';
+import { Category } from '../../../model/category';
+import { QuestionAnswer } from '../../../model/questionAnswer';
 
 
 @Injectable()

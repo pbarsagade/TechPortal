@@ -1,13 +1,26 @@
 <h2 mat-dialog-title>{{quesAns.Question.Title}}</h2>
-<mat-dialog-content>
-  <div *ngIf="quesAns.Answers.length > 0; else noAnsBlock">
-    {{quesAns.Answers[0].Description}}
-    {{quesAns.Answers[0].User.UserName}}
+<form #frmQue="ngForm" (ngSubmit)="onSubmit(frmQue);">
+  <div fxFlex>
+    <mat-dialog-content>
+      <div *ngIf="isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
+        <mat-form-field>
+          <textarea [(ngModel)]="yourAns" name="yourAns" required rows="10" matInput placeholder="Your Answer"></textarea>
+        </mat-form-field>
+      </div>
+      <div *ngIf="!isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
+        <p>Your Answer: {{yourAns}} </p>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <div fxLayout="row" fxLayoutGap="20px">
+        <div fxFlex="50" fxLayoutAlign="start center">
+          <button mat-button mat-dialog-close>Cancel</button>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="end center" fxLayoutGap="20px">
+          <button type="button" mat-raised-button color="accent" [disabled]="!frmQue.form.valid" (click)="onPreview(frmQue);">{{prevBtnLbl}}</button>
+          <button type="submit" mat-raised-button mat-dialog-close color="primary" [disabled]="!frmQue.form.valid">Submit</button>
+        </div>
+      </div>
+    </mat-dialog-actions>
   </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <button mat-button (click)="save()">Yes</button>
-</mat-dialog-actions>
-<ng-template #noAnsBlock>No Answers available</ng-template>
+</form>

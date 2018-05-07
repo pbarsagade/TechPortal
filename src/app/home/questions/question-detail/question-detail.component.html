@@ -9,6 +9,18 @@
   </mat-card-actions>
   <mat-card-content>
     <p>
-      {{queDetails.Question.Description}} </p>
+      {{queDetails.Question.Description}}
+    </p>
+    <hr>
+    <h3>Answers</h3>
+    <div fxFlex *ngIf="queDetails.Answers.length > 0; else noAnsBlock">
+      <mat-list>
+        <mat-list-item *ngFor="let ans of queDetails.Answers | orderBy: 'DateCreated':true">
+          <a href=""></a>
+          {{ans.Description}} {{ans.DateCreated | date:"MM/dd/yy hh:mm:ss"}}
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <ng-template #noAnsBlock>No Answers available</ng-template>
   </mat-card-content>
 </mat-card>
