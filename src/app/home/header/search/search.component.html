@@ -1,5 +1,5 @@
 <mat-form-field>
-  <input matInput placeholder="Search" [(ngModel)]='searchText'>
+  <input matInput placeholder="Search" [(ngModel)]='searchText' (keyup.enter)='onSearch()'>
 
 </mat-form-field>
 <button mat-icon-button (click)='onSearch()'>

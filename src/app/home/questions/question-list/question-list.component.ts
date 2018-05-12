@@ -31,7 +31,7 @@ export class QuestionListComponent implements OnInit {
       if (filtertxt === '') {
         this.filteredqueAnsList = this.queAnsList;
       } else {
-        this.filteredqueAnsList = this.queAnsList.filter(ques => ques.Question.Title.indexOf(filtertxt) >= 0);
+        this.filteredqueAnsList = this.queAnsList.filter(ques => ques.Question.Title.toLowerCase().indexOf(filtertxt.toLowerCase()) >= 0);
       }
     });
   }
