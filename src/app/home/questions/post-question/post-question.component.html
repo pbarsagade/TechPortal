@@ -5,7 +5,7 @@
         <mat-card-title>Post Question</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div *ngIf="isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
+        <div *ngIf="prevBtnLbl === 'Preview'" fxLayout="column" fxLayoutAlign="space-around strech">
           <mat-form-field>
             <input [(ngModel)]="question.Title" name="title" required matInput placeholder="Title">
           </mat-form-field>
@@ -14,15 +14,14 @@
           </mat-form-field>
           <mat-form-field>
             <mat-select [(ngModel)]="question.Category.Id" name="category" required placeholder="Technology">
-                <mat-option *ngFor="let cat of categories" [value]="cat.Id">
-                    {{ cat.Name }}
-                  </mat-option>
+              <mat-option *ngFor="let cat of categories" [value]="cat.Id">
+                {{ cat.Name }}
+              </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <div *ngIf="!isEditable" fxLayout="column" fxLayoutAlign="space-around strech">
-          <p>Form value: {{ question.title }}</p>
-          <p>Form title: {{ title }} {{desc}} {{category}}</p>
+        <div *ngIf="prevBtnLbl === 'Edit'" fxLayout="column" fxLayoutAlign="space-around strech">
+          <p>Form value: {{ question.Title }} {{ question.Description }} {{ question.Category.Id }}</p>
         </div>
       </mat-card-content>
       <mat-card-actions>

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../../shared/material.module';
@@ -16,6 +17,7 @@ const headRouts: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
     MaterialModule,
     RouterModule.forChild(headRouts)

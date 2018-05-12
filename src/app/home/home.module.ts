@@ -8,6 +8,7 @@ import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeRoutingModule} from './home-routing.module';
 import { ProfileModuleModule } from './profile/profile-module.module';
+import { SearchFilterService } from './search-filter.service';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { ProfileModuleModule } from './profile/profile-module.module';
   ],
   declarations: [
     HomeComponent
-  ]
+  ],
+  providers: [SearchFilterService]
 })
 export class HomeModule { }

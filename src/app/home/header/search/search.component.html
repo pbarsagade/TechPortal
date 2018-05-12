@@ -1,3 +1,7 @@
 <mat-form-field>
-    <input matInput placeholder="Search">
+  <input matInput placeholder="Search" [(ngModel)]='searchText'>
+
 </mat-form-field>
+<button mat-icon-button (click)='onSearch()'>
+  <mat-icon title="Search">search</mat-icon>
+</button>

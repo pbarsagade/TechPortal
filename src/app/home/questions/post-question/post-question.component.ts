@@ -18,7 +18,6 @@ export class PostQuestionComponent implements OnInit {
   desc: string;
   category: string;
   prevBtnLbl = 'Preview';
-  isEditable = true;
   constructor(private queSvc: QuestionService, private catSvc: CategoryService, private router: Router) { }
 
   ngOnInit() {
@@ -44,8 +43,7 @@ export class PostQuestionComponent implements OnInit {
 
   onPreview(frmQue: NgForm) {
     this.prevBtnLbl = (this.prevBtnLbl === 'Preview') ? 'Edit' : 'Preview';
-    this.isEditable = !this.isEditable;
-    if (!this.isEditable) {
+    if (this.prevBtnLbl === 'Preview') {
       // this.question = frmQue.value;
       console.log(frmQue.value);
       console.log(this.title);
